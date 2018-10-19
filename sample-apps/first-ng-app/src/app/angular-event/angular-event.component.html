@@ -1,0 +1,16 @@
+<mat-card *ngIf="entry" class="event-card">
+  <mat-card-title>
+    {{entry.title}}
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{entry.location}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    {{entry.startDate | date: 'fullDate' }} to {{entry.endDate | date: 'fullDate' }}
+
+    <div [innerHtml]="entry.details | mdToHtml"></div>
+    <a href="{{entry.link}}" target="_blank">
+      <button mat-button>Details...</button>
+    </a>
+  </mat-card-content>
+</mat-card>
